@@ -1,0 +1,385 @@
+/* Reset și înălțime completă */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fffaf6;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #e8c3b9;
+  color: white;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  opacity: 0;
+  animation: slideDown 1s ease forwards;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p.fade-text {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* Navigation bar */
+nav {
+  background: #333;
+  padding: 0.5rem;
+  text-align: center;
+  opacity: 0;
+  animation: navSlideDown 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s, transform 0.2s;
+}
+
+nav a:hover {
+  color: #f5d5c4;
+  transform: scale(1.2);
+}
+
+/* Container principal */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+  padding-top: 150px; /* padding ca să nu fie ascuns de coș */
+  margin-bottom: 130px;
+}
+
+/* Section titles and paragraph animation */
+.fade-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Stagger delays for text elements */
+header .fade-text { animation-delay: 0.3s; }
+.container h2.fade-text:nth-of-type(1) { animation-delay: 0.5s; }
+.container h2.fade-text:nth-of-type(2) { animation-delay: 0.7s; }
+.container p.fade-text { animation-delay: 0.9s; }
+
+/* Grid carduri lumânări */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.card {
+  flex: 0 0 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0.5rem;
+}
+
+.card p {
+  margin: 0.5rem 1rem 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: bold;
+}
+
+a.button, .button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background: #e8c3b9;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+}
+
+a.button:hover, .button:hover {
+  background: #d9a89e;
+  transform: scale(1.05);
+}
+
+/* Cart fix */
+#cart {
+  position: fixed;   /* îl fixează pe ecran */
+  top: 100px;        /* distanța de sus */
+  right: 20px;       /* distanța de la marginea dreaptă */
+  width: 260px;
+  background-color: #fffaf5;
+  border: 2px solid #b86b77;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  z-index: 1000;     /* să fie deasupra altor elemente */
+  font-family: Arial, sans-serif;
+}
+
+#cart h3 {
+  margin-top: 0;
+  color: #b86b77;
+  text-align: center;
+}
+
+#cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#cart li {
+  margin-bottom: 6px;
+}
+
+#cart p {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#clear-cart {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background: #b86b77;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#clear-cart:hover {
+  background: #a45a66;
+}
+
+.view-cart-btn {
+  display: block;
+  text-align: center;
+  background-color: #b86b77;
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.view-cart-btn:hover {
+  background-color: #a45a66;
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 0.1rem;
+  z-index: 90;
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: 1.5s;
+}
+
+/* Instagram button */
+.insta-btn {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  background: #e1306c;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.insta-btn img {
+  width: 40px;
+  height: 40px;
+}
+
+.insta-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  background: #c72b5c;
+}
+
+/* Logo image */
+header .logo {
+  max-height: 300px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Animations for cards */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 1s; }
+.card:nth-child(6) { animation-delay: 1.2s; }
+.card:nth-child(7) { animation-delay: 1.4s; }
+.card:nth-child(8) { animation-delay: 1.6s; }
+.card:nth-child(9) { animation-delay: 1.8s; }
+.card:nth-child(10) { animation-delay: 2s; }
+.card:nth-child(11) { animation-delay: 2.2s; }
+.card:nth-child(12) { animation-delay: 2.4s; }
+.card:nth-child(13) { animation-delay: 2.6s; }
+.card:nth-child(14) { animation-delay: 2.8s; }
+.card:nth-child(15) { animation-delay: 3s; }
+.card:nth-child(16) { animation-delay: 3.2s; }
+.card:nth-child(17) { animation-delay: 3.4s; }
+.card:nth-child(18) { animation-delay: 3.6s; }
+.card:nth-child(19) { animation-delay: 3.8s; }
+.card:nth-child(20) { animation-delay: 4s; }
+.card:nth-child(21) { animation-delay: 4.2s; }
+.card:nth-child(22) { animation-delay: 4.4s; }
+.card:nth-child(23) { animation-delay: 4.6s; }
+.card:nth-child(24) { animation-delay: 4.8s; }
+.card:nth-child(25) { animation-delay: 5s; }
+.card:nth-child(26) { animation-delay: 5.2s; }
+.card:nth-child(27) { animation-delay: 5.4s; }
+.card:nth-child(28) { animation-delay: 5.8s; }
+.card:nth-child(29) { animation-delay: 6s; }
+.card:nth-child(30) { animation-delay: 6.2s; }
+.card:nth-child(31) { animation-delay: 6.4s; }
+.card:nth-child(32) { animation-delay: 6.8s; }
+.card:nth-child(33) { animation-delay: 7s; }
+.card:nth-child(34) { animation-delay: 7.2s; }
+.card:nth-child(35) { animation-delay: 8.4s; }
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Coș fix în colțul din dreapta sus */
+#cart {
+  position: fixed;   
+  top: 100px;        
+  right: 20px;       
+  width: 260px;
+  background-color: #fffaf5;
+  border: 2px solid #b86b77;
+  border-radius: 15px;
+  padding: 2px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  z-index: 1000;     
+  font-family: Arial, sans-serif;
+}
+
+/* Eliminăm animațiile pentru coș */
+#cart, #cart * {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Lista și butoanele din coș */
+#cart h3 {
+  margin-top: 0;
+  color: #b86b77;
+  text-align: center;
+}
+
+#cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#cart li {
+  margin-bottom: 6px;
+}
+
+#cart p {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#clear-cart {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background: #b86b77;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#clear-cart:hover {
+  background: #a45a66;
+}

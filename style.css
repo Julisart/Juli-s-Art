@@ -370,3 +370,46 @@ header .logo {
     font-size: 14px;
   }
 }
+
+
+/* 🔸 Buton simplu pentru coș */
+.cart-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #b86b77;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.cart-button:hover {
+  background-color: #a45a66;
+  transform: scale(1.05);
+}
+
+/* 🔸 Variante responsive */
+@media (max-width: 768px) {
+  .cart-button {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-button {
+    top: 8px;
+    right: 8px;
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+}
+
